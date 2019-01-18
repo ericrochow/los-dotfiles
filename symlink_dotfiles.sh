@@ -1,6 +1,6 @@
 #!/bin/bash
 function verify_dir {
-  if [ ! -d "$1" ]; then
+  if [ ! -d $1 ]; then
     /bin/mkdir -p $1
   fi
   cd $1
@@ -9,7 +9,7 @@ function verify_dir {
 cd ~
 
 # Verify bash-it is cloned
-if [ ! -d "~/.bash_it" ]; then
+if [ ! -d ~/.bash_it ]; then
     /usr/bin/git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 fi
 
