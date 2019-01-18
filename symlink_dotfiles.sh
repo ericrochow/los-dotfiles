@@ -24,6 +24,7 @@ if [ ! -f ~/.vim/black/bin/activate ]; then
   else
     /usr/bin/apt install python3-virtualenv
     /usr/bin/virtualenv --python=python3 ~/.vim/black
+  fi
 fi
 
 source ~/.vim/black/bin/activate
