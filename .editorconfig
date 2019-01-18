@@ -1,0 +1,41 @@
+;.editorconfig
+
+root = true
+
+[**]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.js]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+[**.json]
+indent_style = space
+indent_size = 4
+tab_width = 4
+trim_trailing_whitespace = true
+
+[**.css]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+[**.html]
+indent_style = space
+indent_size = 2
+tab_width = 2
+max_char = 78
+brace_style = expand
+
+[**.md]
+trim_trailing_whitespace = false
+
+[**.rst]
+trim_trailing_whitespace = false
+

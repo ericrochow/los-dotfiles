@@ -1,0 +1,44 @@
+"*":
+  "SFTP-deployment": {}
+  autosave:
+    enabled: true
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "welcome"
+    ]
+    projectHome: "/home/erochow/Scripts"
+    telemetryConsent: "no"
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Hack"
+    fontSize: 13
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    softWrap: true
+    userId: "f23b4251-e772-b13a-4298-5e126a0e7fe5"
+  linter:
+    lintOnOpen: false
+    lintPreviewTabs: false
+  "linter-pylint":
+    disableTimeout: true
+    executablePath: "%p/env/bin/pylint"
+    pythonPath: "%p/env/bin/"
+  "linter-ui-default":
+    showPanel: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "one-dark-ui": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+".source.yaml":
+  editor:
+    tabLength: 2
