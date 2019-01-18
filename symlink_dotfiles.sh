@@ -7,6 +7,7 @@ function verify_dir {
 }
 
 cd ~
+/usr/bin/apt update
 
 # Verify bash-it is cloned
 if [ ! -d ~/.bash_it ]; then
@@ -18,11 +19,15 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 fi
 
 if [ ! -f ~/.vim/black/bin/activate ]; then
-  /usr/bin/virtualenv --python=python3 ~/.vim/black
+  if command virtualenv 2>/dev/null; then
+    /usr/bin/virtualenv --python=python3 ~/.vim/black
+  else
+    /usr/bin/apt install python3-virtualenv
+    /usr/bin/virtualenv --python=python3 ~/.vim/black
 fi
 
 source ~/.vim/black/bin/activate
-pip install black
+[ -z "$(pip freeze | install black)" ] && pip install black
 deactivate
 
 /bin/ln -s -f ~/los-dotfiles/.bash_profile
