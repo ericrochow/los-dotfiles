@@ -30,7 +30,7 @@ fi
 if command cmake 2>/dev/null; then
   echo "dependencies met"
 else
-  /usr/bin/sudo /usr/bin/apt install cmake python3-dev python-dev build-essential
+  /usr/bin/sudo /usr/bin/apt install -y cmake python3-dev python-dev build-essential
   pushd ~/vim/bundle/YouCompleteMe
   ./install.py
   popd
