@@ -11,7 +11,6 @@ cd ~
 # Verify bash-it is cloned
 if [ ! -d "~/.bash_it" ]; then
     /usr/bin/git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-  fi
 fi
 
 /bin/ln -s -f ~/los-dotfiles/.bash_profile
