@@ -146,3 +146,4 @@ verify_dir "~/.ipython/profile_default/"
 #verify_dir "~/.ssh"
 #/bin/ln -s -f ~/los-dotfiles/.ssh/config
 
+/usr/bin/vim +PluginInstall +qall
