@@ -7,7 +7,7 @@ function verify_dir {
 }
 
 cd ~
-/usr/bin/apt update
+/usr/bin/sudo /usr/bin/apt update
 
 # Verify bash-it is cloned
 if [ ! -d ~/.bash_it ]; then
@@ -22,7 +22,7 @@ if [ ! -f ~/.vim/black/bin/activate ]; then
   if command virtualenv 2>/dev/null; then
     /usr/bin/virtualenv --python=python3 ~/.vim/black
   else
-    /usr/bin/apt install python3-virtualenv
+    /usr/bin/sudo /usr/bin/apt install -y python3-virtualenv
     /usr/bin/virtualenv --python=python3 ~/.vim/black
   fi
 fi
