@@ -27,6 +27,16 @@ if [ ! -f ~/.vim/black/bin/activate ]; then
   fi
 fi
 
+if command cmake 2>/dev/null; then
+  echo "dependencies met"
+else
+  /usr/bin/sudo /usr/bin/apt install cmake python3-dev python-dev build-essential
+  pushd ~/vim/bundle/YouCompleteMe
+  ./install.py
+  popd
+fi
+
+
 source ~/.vim/black/bin/activate
 [ -z "$(pip freeze | install black)" ] && pip install black
 deactivate
