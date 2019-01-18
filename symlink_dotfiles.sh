@@ -10,7 +10,11 @@ cd ~
 
 # Verify bash-it is cloned
 if [ ! -d ~/.bash_it ]; then
-    /usr/bin/git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+  /usr/bin/git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+fi
+
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  /usr/bin/git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 /bin/ln -s -f ~/los-dotfiles/.bash_profile
