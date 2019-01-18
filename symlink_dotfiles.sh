@@ -27,16 +27,6 @@ if [ ! -f ~/.vim/black/bin/activate ]; then
   fi
 fi
 
-if command cmake 2>/dev/null; then
-  echo "dependencies met"
-else
-  /usr/bin/sudo /usr/bin/apt install -y cmake python3-dev python-dev build-essential
-  pushd ~/.vim/bundle/YouCompleteMe
-  ./install.py
-  popd
-fi
-
-
 source ~/.vim/black/bin/activate
 [ -z "$(pip freeze | install black)" ] && pip install black
 deactivate
@@ -171,3 +161,13 @@ verify_dir "~/.ipython/profile_default/"
 #/bin/ln -s -f ~/los-dotfiles/.ssh/config
 
 /usr/bin/vim +PluginInstall +qall
+
+if command cmake 2>/dev/null; then
+  echo "dependencies met"
+else
+  /usr/bin/sudo /usr/bin/apt install -y cmake python3-dev python-dev build-essential
+  pushd ~/.vim/bundle/YouCompleteMe
+  ./install.py
+  popd
+fi
+
