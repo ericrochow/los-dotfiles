@@ -17,6 +17,14 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   /usr/bin/git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
+if [ ! -f ~/.vim/black/bin/activate ]; then
+  /usr/bin/virtualenv --python=python3 ~/.vim/black
+fi
+
+source ~/.vim/black/bin/activate
+pip install black
+deactivate
+
 /bin/ln -s -f ~/los-dotfiles/.bash_profile
 /bin/ln -s -f ~/los-dotfiles/.bashrc
 /bin/ln -s -f ~/los-dotfiles/.tmux.conf
