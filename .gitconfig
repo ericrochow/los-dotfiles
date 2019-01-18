@@ -1,0 +1,7 @@
+[user]
+	name = Eric Rochow
+	email = erochow@liquidweb.com
+[core]
+	editor = vim
+[push]
+	default = matching
