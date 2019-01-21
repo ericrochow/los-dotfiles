@@ -53,6 +53,7 @@ Plugin 'ambv/black'
 
 " Ansible syntax
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'pearofducks/ansible-vim'
 
 " Multi-language syntax
 Plugin 'editorconfig/editorconfig-vim'
@@ -244,6 +245,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ | set autoindent
     \ | set fileformat=unix
     \ | set number
+
+au BufNewFile,BufNewFile */playbooks/*.yml, */ansible*/*.yml
+   \ set filetype=yaml.ansible
 
 autocmd StdinReadPre *
     \ let s:std_in=1
