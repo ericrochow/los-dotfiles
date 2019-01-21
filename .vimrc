@@ -60,6 +60,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-syntastic/syntastic'
 
 " Other language syntax
+Plugin 'stephpy/vim-yaml'
 Plugin 'maksimr/vim-jsbeautify' " JSON and other JS
 Plugin 'Rykka/riv.vim' " rst
 Plugin 'lepture/vim-jinja' " jinja
@@ -153,6 +154,16 @@ nmap <F8> :TagbarToggle<CR>
 let g:Powerline_theme='short'
 let g:Powerline_colorscheme='solarized256_dark'
 " End powerline Configuration
+
+" Start ansible-vim Configuration
+let g:ansible_unindent_after_newline = 1
+let g:ansible_yamlKeyName = 'yamlKey'
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'd'
+let g:ansible_extra_keywords_highlight = 1
+" let g:ansible_template_syntaxes = { '*.yml.j2': 'yaml', '*.conf.j2', '' }
+let g:ansible_template_syntaxes = { '*.yml.j2': 'yaml' }
+" End ansible-vim Configuration
 
 " Start fuzzyfinder Configuration
 " This is the default extra key bindings
