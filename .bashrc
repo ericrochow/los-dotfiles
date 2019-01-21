@@ -339,7 +339,7 @@ export BASH_IT_THEME='powerline-multiline'
 
 # Powerline prompt
 # export POWERLINE_PROMPT_USER_INFO_MODE="sudo"
-export POWERLINE_LEFT_PROMPT="hostname hostname python_venv cwd"
+export POWERLINE_LEFT_PROMPT="scm hostname python_venv cwd"
 export POWERLINE_RIGHT_PROMPT="in_vim clock user_info"
 
 # (Advanced): Change this to the name of your remote repo if you
