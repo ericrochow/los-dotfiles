@@ -638,8 +638,13 @@ c.InteractiveShell.banner1 = """ ____ ____ ____ ____ ____ ____ ____ ____ ____ __
 # If True, any %store-d variables will be automatically restored when IPython
 # starts.
 # c.StoreMagics.autorestore = False
-from powerline.bindings.ipython.since_5 import PowerlinePrompts
 
-c = get_config()
-c.TerminalInteractiveShell.simple_prompt = False
-c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
+# Fail silently if powerline not installed (e.g. in a venv)
+try:
+    from powerline.bindings.ipython.since_5 import PowerlinePrompts
+
+    c = get_config()
+    c.TerminalInteractiveShell.simple_prompt = False
+    c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
+except ImportError:
+    pass
