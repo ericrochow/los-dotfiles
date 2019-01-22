@@ -30,7 +30,7 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'sheerun/vim-polyglot'
 
 " Search
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 
 " Make Powerline work
@@ -64,6 +64,10 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'maksimr/vim-jsbeautify' " JSON and other JS
 Plugin 'Rykka/riv.vim' " rst
 Plugin 'lepture/vim-jinja' " jinja
+
+" Sublime feature emulation
+Plugin 'tpope/vim-surround'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
