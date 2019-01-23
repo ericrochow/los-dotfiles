@@ -52,7 +52,6 @@ Plugin 'ambv/black'
 " Plugin 'w0rp/ale'
 
 " Ansible syntax
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'pearofducks/ansible-vim'
 
 " Multi-language syntax
