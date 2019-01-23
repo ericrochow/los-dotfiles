@@ -167,3 +167,5 @@ alias vi='vim'
 alias sduo='sudo'
 alias suod='sudo'
 
+alias t='todo-txt'
+alias todo.sh='todo-txt'
