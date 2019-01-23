@@ -52,6 +52,7 @@ verify_dir "~/.bash_it"
 
 verify_dir "~/.bash_it/custom"
 /bin/ln -s -f ~/los-dotfiles/.bash_it/custom/personal_aliases.bash
+/bin/ln -s -f ~/los-dotfiles/.bash_it/custom/tilix.bash
 
 
 verify_dir "~/.config/Atom"
