@@ -54,6 +54,19 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 #-------------------------------------------------------------
+# Force SSH sessions to use chromaterm-- (if installed)
+#-------------------------------------------------------------
+sshc() {
+  TERM=xterm
+  if hash ct 2>/dev/null; then
+    /usr/bin/ssh $* | ct
+  else
+    /usr/bin/ssh $*
+  fi
+}
+alias ssh='sshc'
+
+#-------------------------------------------------------------
 # Ansible stuff
 #-------------------------------------------------------------
 alias ansible='/opt/ansible/bin/python /opt/ansible/bin/ansible'
@@ -80,7 +93,6 @@ alias orwell='ssh -4 www.ericrochow.net -p 29070'
 alias asimov='ssh -4 www.ericrochow.net -p 29071'
 alias cypher='sudo lxc exec bots.noc:cypher bash'
 alias salesforce='sudo lxc exec bots.noc:salesforce bash'
-alias ssh='TERM=xterm ssh'
 alias whoisas='whois -h whois.cymru.com -v'
 alias forecast='curl -so /tmp/weather http://wttr.in ; cat /tmp/weather | egrep -e "City:|Feature:|@igor" -v'
 alias kpcli='kpcli --kdb /opt/keepass/erochow.kdbx'
