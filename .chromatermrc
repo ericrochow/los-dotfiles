@@ -1,0 +1,16 @@
+#config regex on
+#event {SESSION DISCONNECTED} {#end}
+
+#highlight {%d.%d.%d.%d} {bold yellow}
+#highlight { any } {bold white}
+#highlight {{permit(ted)*}} {bold green}
+#highlight {{(d|D)eny}} {bold red}
+#highlight {{ (E|e)rr..}} {bold white}
+#highlight {INSIDE} {bold blue}
+#highlight {OUTSIDE} {bold green}
+#highlight {DMZ} {bold magenta}
+
+#substitute {^Cisco %1 Version %2, %3} {Cisco %1 <134>Version %2<088>, %3}
+#substitute {%1pkts encaps: %d, %3} {%1pkts encaps: <150>%2<088>, %3}
+#substitute {%1pkts decaps: %d, %3} {%1pkts decaps: <120>%2<088>, %3}
+#substitute {%1 uptime is %2} {%1 uptime is <150>%2<088>}
