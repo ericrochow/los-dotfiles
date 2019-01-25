@@ -64,7 +64,7 @@ sshc() {
     /usr/bin/ssh $*
   fi
 }
-alias ssh='sshc'
+# alias ssh='sshc'
 
 #-------------------------------------------------------------
 # Ansible stuff
