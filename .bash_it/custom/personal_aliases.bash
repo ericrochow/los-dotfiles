@@ -66,17 +66,6 @@ sshc() {
 }
 # alias ssh='sshc'
 
-#-------------------------------------------------------------
-# Ansible stuff
-#-------------------------------------------------------------
-alias ansible='/opt/ansible/bin/python /opt/ansible/bin/ansible'
-alias ansible-console='/opt/ansible/bin/python /opt/ansible/bin/ansible-console'
-alias ansible-doc='/opt/ansible/bin/python /opt/ansible/bin/ansible-dc'
-alias ansible-galaxy='/opt/ansible/bin/python /opt/ansible/bin/ansible-galaxy'
-alias ansible-playbook='/opt/ansible/bin/python /opt/ansible/bin/ansible-playbook'
-alias ansible-pull='/opt/ansible/bin/python /opt/ansible/bin/ansible-pull'
-alias ansible-vault='/opt/ansible/bin/python /opt/ansible/bin/ansible-vault'
-
 #--------------------------------------------------------------
 # Python stuff
 #--------------------------------------------------------------
