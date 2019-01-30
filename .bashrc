@@ -81,7 +81,6 @@ unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/sbin:/usr/sbin:/home/erochow/Scripts:$PATH
 export GOPATH=/home/erochow/gocode
-export ANSIBLE_CONFIG=/opt/ansible/etc/ansible.cfg
 
 #-------------------------------------------------------------
 # Greeting, motd etc. ...
