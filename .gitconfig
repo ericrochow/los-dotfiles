@@ -2,6 +2,7 @@
 	name = Eric Rochow
 	email = erochow@liquidweb.com
 [core]
-	editor = vim
+  editor = vim
+  excludesfile = '~/.gitignore'
 [push]
 	default = matching
