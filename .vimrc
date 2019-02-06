@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'zhou13/vim-easyescape'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -167,6 +168,13 @@ let g:ansible_extra_keywords_highlight = 1
 " let g:ansible_template_syntaxes = { '*.yml.j2': 'yaml', '*.conf.j2', '' }
 let g:ansible_template_syntaxes = { '*.yml.j2': 'yaml' }
 " End ansible-vim Configuration
+
+" Start Easyescape Configuration
+let g:easyescape_chars = { "j": 1, "k": 1 }
+let g:easyescape_timeout = 100
+cnoremap jk <ESC>
+cnoremap kj <ESC>
+" End Easyescape Configuration
 
 " Start fuzzyfinder Configuration
 " This is the default extra key bindings
