@@ -158,7 +158,14 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #-------------------------------------------------------------
 export HISTSIZE=1000
 export HISTFILESIZE=5000
-export PYTHONWARNINGS='default'
+export PYTHONWARNINGS=''
+pwt() {
+  if [ -z "${PYTHONWARNINGS}" ]; then
+    export PYTHONWARNINGS="default"
+  else
+    export PYTHONWARNINGS=""
+  fi
+}
 source /etc/default/cloudconvert
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
