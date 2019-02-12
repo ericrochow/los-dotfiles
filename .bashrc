@@ -79,8 +79,8 @@ shopt -s extglob       # Necessary for programmable completion.
 shopt -u mailwarn
 unset MAILCHECK        # Don't want my shell to warn me of incoming mail.
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/sbin:/usr/sbin:/home/erochow/Scripts:$PATH
 export GOPATH=/home/erochow/gocode
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/sbin:/usr/sbin:/home/erochow/Scripts:$GOPATH/bin:$PATH
 
 #-------------------------------------------------------------
 # Greeting, motd etc. ...
