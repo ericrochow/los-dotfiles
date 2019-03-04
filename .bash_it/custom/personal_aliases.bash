@@ -73,25 +73,23 @@ alias venv2='virtualenv --python=python2 env'
 alias venv3='virtualenv --python=python3 env'
 
 #--------------------------------------------------------------
+# Route servers
+#--------------------------------------------------------------
+alias route-views='telnet route-views.routeviews.org'
+alias att='telnet route-server.ip.att.net'
+alias comcast='telnet route-server.newyork.ny.ibone.comcast.net'
+alias he='telnet route-server.he.net'
+
+#--------------------------------------------------------------
 #erochow originals
 #--------------------------------------------------------------
 alias tmuxre='tmux -2 attach-session -d -t de || /usr/bin/tmux_config'
 alias tmuxprog='tmux -2 attach-session -d -t prog || tmux new-session -s prog'
 alias tmuxlab='tmux attach-session -d -t lab || tmux new-session -s lab'
-alias orwell='ssh -4 www.ericrochow.net -p 29070'
-alias asimov='ssh -4 www.ericrochow.net -p 29071'
-alias cypher='sudo lxc exec bots.noc:cypher bash'
-alias salesforce='sudo lxc exec bots.noc:salesforce bash'
 alias whoisas='whois -h whois.cymru.com -v'
 alias forecast='curl -so /tmp/weather http://wttr.in ; cat /tmp/weather | egrep -e "City:|Feature:|@igor" -v'
-alias kpcli='kpcli --kdb /opt/keepass/erochow.kdbx'
 alias chromium-browser='/usr/lib/chromium-browser/chromium-browser --enable-plugins %U'
-alias route-views='telnet route-views.routeviews.org'
-alias att='telnet route-server.ip.att.net'
-alias comcast='telnet route-server.newyork.ny.ibone.comcast.net'
-alias he='telnet route-server.he.net'
-alias updates='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apm upgrade && sudo aideinit -f -y -b'
-alias lab='telnet lab.noc.liquidweb.com'
+alias updates='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo aideinit -f -y -b'
 alias bogons='whois -h whois.radb.net fltr-bogons'
 
 #-------------------------------------------------------------
@@ -108,6 +106,16 @@ case $(hostname) in
     alias nocpasswd='ssh noc "sudo cat /home/passwords/newpasswords7-now_in_use_now"'
     alias autopw='ssh noc "sudo grep automation /home/passwords/newpasswords7-now_in_use_now " | awk '"'"'{print $2}'"'"''
     alias autossh='sshpass -p $(autopw) ssh -l automation'
+    alias orwell='ssh -4 www.ericrochow.net -p 29070'
+    alias asimov='ssh -4 www.ericrochow.net -p 29071'
+    alias cypher='sudo lxc exec bots.noc:cypher bash'
+    alias salesforce='sudo lxc exec bots.noc:salesforce bash'
+    alias kpcli='kpcli --kdb /opt/keepass/erochow.kdbx'
+    alias lab='telnet lab.noc.liquidweb.com'
+    alias eqx1='ssh lw-eqx-border1.rtr'
+    alias eqx2='ssh lw-eqx-border2.rtr'
+    alias tlx1='ssh lw-tlx-border1.rtr'
+    alias tlx2='ssh lw-tlx-border2.rtr'
     ;;
   "beardofprey-lt")
     ;;
@@ -115,14 +123,6 @@ case $(hostname) in
     ;;
 esac
 
-#-------------------------------------------------------------
-# ssh host aliases
-#-------------------------------------------------------------
-
-alias eqx1='ssh lw-eqx-border1.rtr'
-alias eqx2='ssh lw-eqx-border2.rtr'
-alias tlx1='ssh lw-tlx-border1.rtr'
-alias tlx2='ssh lw-tlx-border2.rtr'
 
 #-------------------------------------------------------------
 # dig aliases and functions
