@@ -175,3 +175,14 @@ else
   popd
 fi
 
+for bplugin in "alias-completion" "base" "docker-compose" "docker" "explain" "extract" "fzf" "gif" "git" "git-subrepo" "powerline" "tmux" "todo" ; do
+  bash-it enable plugin $bplugin
+done
+
+for balias in alias "docker" "docker-copmose" "general" "git" "systemd" "todo.txt-cli" ; do
+  bash-it enable alias $balias
+done
+
+for bcompletion in bash-it "docker" "docker-compose" "git" "pip3" "pip" "ssh" "tmux" "todo" ; do
+  bash-it enable completion $bcompletion
+done
