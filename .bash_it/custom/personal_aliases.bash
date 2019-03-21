@@ -166,7 +166,9 @@ pwt() {
     export PYTHONWARNINGS=""
   fi
 }
-source /etc/default/cloudconvert
+if [ -f /etc/default/cloudconvert ]; then
+  source /etc/default/cloudconvert
+fi
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
 #-------------------------------------------------------------
