@@ -1,0 +1,20 @@
+#!/bin/bash
+tmux new-session -d -s de -n footy 'rtv'
+sleep 0.25
+#tmux split-window -h 'rainbowstream'
+#sleep 0.25
+tmux new-window -n puterz 'rtv'
+sleep 0.25
+#tmux split-window -h 'rainbowstream'
+#sleep 0.25
+#tmux new-window -n slack 'slack-term -config /etc/slack-term/slack-term.json'
+tmux new-window -n comms 'slack-term'
+sleep 0.25
+tmux split-window -v -p 80 'mutt'
+sleep 0.25
+tmux new-window -n hangouts '/opt/hangups/env/bin/python3 /opt/hangups/env/bin/hangups'
+#sleep 0.25
+#tmux new-window -n musics 'cmus'
+sleep 0.25
+tmux new-window
+tmux -2 attach-session -d -t de
