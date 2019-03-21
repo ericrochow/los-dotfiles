@@ -158,6 +158,9 @@ verify_dir "~/.ipython/profile_default/"
 /bin/ln -s -f ~/los-dotfiles/.ipython/profile_default/ipython_config.py
 
 
+/bin/ls -s -f ~/los-dotfiles/tools/tmux_config /usr/bin/
+
+
 #verify_dir "~/.ssh"
 #/bin/ln -s -f ~/los-dotfiles/.ssh/config
 
