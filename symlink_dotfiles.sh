@@ -28,7 +28,7 @@ if [ ! -f ~/.vim/black/bin/activate ]; then
 fi
 
 source ~/.vim/black/bin/activate
-[ -z "$(pip freeze | install black)" ] && pip install black
+[ -z "$(pip freeze | grep black)" ] && pip install black
 deactivate
 
 /bin/ln -s -f ~/los-dotfiles/.bash_profile
@@ -79,7 +79,7 @@ verify_dir "~/los-dotfiles/.config/powerline/config_files/colorschemes/pdb/"
 /bin/ln -s -f ~/los-dotfiles/.config/powerline/config_files/colorschemes/pdb/solarized.json
 
 
-verify_dir "/los-dotfiles/.config/powerline/config_files/colorschemes/shell/"
+verify_dir "~/los-dotfiles/.config/powerline/config_files/colorschemes/shell/"
 /bin/ln -s -f ~/los-dotfiles/.config/powerline/config_files/colorschemes/shell/__main__.json
 /bin/ln -s -f ~/los-dotfiles/.config/powerline/config_files/colorschemes/shell/default.json
 /bin/ln -s -f ~/los-dotfiles/.config/powerline/config_files/colorschemes/shell/solarized.json
@@ -158,7 +158,7 @@ verify_dir "~/.ipython/profile_default/"
 /bin/ln -s -f ~/los-dotfiles/.ipython/profile_default/ipython_config.py
 
 
-/bin/ls -s -f ~/los-dotfiles/tools/tmux_config /usr/bin/
+/usr/bin/sudo /bin/ln -s -f ~/los-dotfiles/tools/tmux_config /usr/bin/tmux_config
 
 
 #verify_dir "~/.ssh"
@@ -169,17 +169,19 @@ verify_dir "~/.ipython/profile_default/"
 if command cmake 2>/dev/null; then
   echo "dependencies met"
 else
-  /usr/bin/sudo /usr/bin/apt install -y cmake python3-dev python-dev build-essential
+  /usr/bin/sudo /usr/bin/apt install -y cmake python3-dev python-dev build-essential exuberant-ctags
   pushd ~/.vim/bundle/YouCompleteMe
   ./install.py
   popd
 fi
 
+source ~/.bash_it/bash_it.sh
+
 for bplugin in "alias-completion" "base" "docker-compose" "docker" "explain" "extract" "fzf" "gif" "git" "git-subrepo" "powerline" "tmux" "todo" ; do
   bash-it enable plugin $bplugin
 done
 
-for balias in "docker" "docker-copmose" "general" "git" "systemd" "todo.txt-cli" ; do
+for balias in "docker" "docker-compose" "general" "git" "systemd" "todo.txt-cli" ; do
   bash-it enable alias $balias
 done
 
