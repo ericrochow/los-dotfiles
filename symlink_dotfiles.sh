@@ -166,7 +166,7 @@ verify_dir "~/.ipython/profile_default/"
 
 /usr/bin/vim +PluginInstall +qall
 
-if command cmake 2>/dev/null; then
+if type cmake 2>/dev/null; then
   echo "dependencies met"
 else
   /usr/bin/sudo /usr/bin/apt install -y cmake python3-dev python-dev build-essential exuberant-ctags
