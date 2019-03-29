@@ -185,6 +185,6 @@ for balias in "docker" "docker-compose" "general" "git" "systemd" "todo.txt-cli"
   bash-it enable alias $balias
 done
 
-for bcompletion in "docker" "docker-compose" "git" "pip3" "pip" "ssh" "tmux" "todo" ; do
+for bcompletion in "docker" "docker-compose" "git" "pip3" "pip" "pipenv" "ssh" "tmux" "todo" ; do
   bash-it enable completion $bcompletion
 done
