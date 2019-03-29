@@ -177,6 +177,8 @@ pwt() {
 if [ -f /etc/default/cloudconvert ]; then
   source /etc/default/cloudconvert
 fi
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
 #-------------------------------------------------------------
