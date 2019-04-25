@@ -140,6 +140,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 let g:black_fast=0
 let g:black_linelength=79
 let g:black_skip_string_normalization=0
+let g:black_virtualenv="~/.vim/black"
 " End Black Configuration
 
 " Start GitGutter Configuration
@@ -243,6 +244,11 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " Replace the default dictionary completion with fzf-based fuzzy completion
 inoremap <expr> <c-x><c-k> fzf#vim#complete('cat /usr/share/dict/words')
 " End fuzzyfinder Configuration
+
+" Visual text block remaps
+vnoremap J :m ‘>+1gv=gv
+vnoremap K :m ‘<-2gv=gv
+" End visual text block remaps
 
 set rtp+=/usr/share/powerline/bindings/vim/
 set laststatus=2
