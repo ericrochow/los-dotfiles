@@ -85,6 +85,7 @@ alias he='telnet route-server.he.net'
 #--------------------------------------------------------------
 alias tmuxre='tmux -2 attach-session -d -t de || /usr/bin/tmux_config'
 alias tmuxprog='tmux -2 attach-session -d -t prog || tmux new-session -s prog'
+alias tmuxhw='tmux -2 attach-session -d -t hollywood || tmux new-session -s hollywood "/usr/bin/hollywood"'
 alias tmuxlab='tmux attach-session -d -t lab || tmux new-session -s lab'
 alias whoisas='whois -h whois.cymru.com -v'
 alias forecast='curl -so /tmp/weather http://wttr.in ; cat /tmp/weather | egrep -e "City:|Feature:|@igor" -v'
