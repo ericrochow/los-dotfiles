@@ -106,7 +106,7 @@ case $(hostname) in
     alias cypherpost='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/cypherpost.py'
     alias nocpasswd='ssh noc "sudo cat /home/passwords/newpasswords7-now_in_use_now"'
     alias autopw='ssh noc "sudo grep automation /home/passwords/newpasswords7-now_in_use_now " | awk '"'"'{print $2}'"'"''
-    alias autossh='sshpass -p $(autopw) ssh -l automation'
+    alias autossh='sshpass -p $(autopw) ssh -l automation -o StrictHostKeyChecking=no'
     alias orwell='ssh -4 www.ericrochow.net -p 29070'
     alias asimov='ssh -4 www.ericrochow.net -p 29071'
     alias cypher='sudo lxc exec bots.noc:cypher bash'
