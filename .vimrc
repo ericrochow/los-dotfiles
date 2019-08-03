@@ -49,7 +49,7 @@ Plugin 'honza/vim-snippets' " for ultisnips
 " Python syntax
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'ambv/black'
+Plugin 'psf/black'
 " Plugin 'w0rp/ale'
 
 " Ansible syntax
@@ -145,6 +145,19 @@ let g:black_virtualenv="~/.vim/black"
 
 " Start GitGutter Configuration
 nmap <C-g> :GitGutterToggle<CR>
+set updatetime=250
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+let g:gitgutter_override_sign_column_highlight = 1
+highlight SignColumn guibg=bg
+highlight SignColumn ctermbg=bg
+nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
+nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
+nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
+nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 " End GitGutter Configuration
 
 " Start ALE Configuration
