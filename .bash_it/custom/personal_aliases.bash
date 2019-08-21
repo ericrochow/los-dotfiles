@@ -97,28 +97,31 @@ alias bogons='whois -h whois.radb.net fltr-bogons'
 # wks-specific aliases
 #-------------------------------------------------------------
 case $(hostname) in
-  "beardofprey")
+  "thiccboi")
     alias vpslogin='ssh -i ~/.ssh/host.beardofprey.net.key erochow@lwvps.ericrochow.net'
     alias orwell-rsync='rsync -avz -e "ssh -p 29070 -i /home/erochow/.ssh/host.beardofprey.net.key.pub"'
     alias ine-rsync='rsync -avzru -e "ssh -p 29070 -i /home/erochow/.ssh/host.beardofprey.net.key.pub" ~/Videos/ erochow@www.ericrochow.net:/media/Media/Video/Puters/'
     alias sdnify='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/sdnify.py'
     alias unicorndust='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/unicorndust.py'
-    alias cypherpost='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/cypherpost.py'
-    alias nocpasswd='ssh noc "sudo cat /home/passwords/newpasswords7-now_in_use_now"'
-    alias autopw='ssh noc "sudo grep automation /home/passwords/newpasswords7-now_in_use_now " | awk '"'"'{print $2}'"'"''
+    alias clippypost='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/clippypost.py'
+    alias nocpasswd='ssh noc "sudo cat /home/passwords/newpasswords8-now_in_use_now"'
+    alias nocpasswd7='ssh noc "sudo cat /home/passwords/oldpasswords7"'
+    alias autopw='ssh noc "sudo grep automation /home/passwords/newpasswords8-now_in_use_now " | awk '"'"'{print $2}'"'"''
+    alias autopw7='ssh noc "sudo grep automation /home/passwords/oldpasswords7" | awk '"'"'{print $2}'"'"''
     alias autossh='sshpass -p $(autopw) ssh -l automation -o StrictHostKeyChecking=no'
+    alias autossh7='sshpass -p $(autopw7) ssh -l automation -o StrictHostKeyChecking=no'
     alias orwell='ssh -4 www.ericrochow.net -p 29070'
     alias asimov='ssh -4 www.ericrochow.net -p 29071'
-    alias cypher='sudo lxc exec bots.noc:cypher bash'
+    alias clippy='sudo lxc exec bots.noc:clippy bash'
     alias salesforce='sudo lxc exec bots.noc:salesforce bash'
     alias kpcli='kpcli --kdb /opt/keepass/erochow.kdbx'
     alias lab='telnet lab.noc.liquidweb.com'
     alias eqx1='ssh lw-eqx-border1.rtr'
     alias eqx2='ssh lw-eqx-border2.rtr'
-    alias tlx1='ssh lw-tlx-border1.rtr'
-    alias tlx2='ssh lw-tlx-border2.rtr'
+    alias ash1='ssh lw-ash-border1.rtr'
+    alias ash2='ssh lw-ash-border2.rtr'
     ;;
-  "beardofprey-lt")
+  "lilshawty")
     ;;
   *)
     ;;
@@ -144,6 +147,11 @@ tmuxfix() {
   TMUXPID=$(/bin/ps aux | /bin/grep "tmux new-session" | /usr/bin/head -1 | /usr/bin/awk '{print $2}')
   /bin/kill -10 $TMUXPID
 }
+
+#-------------------------------------------------------------
+# Set editor
+#-------------------------------------------------------------
+export EDITOR='vim'
 
 #-------------------------------------------------------------
 # Tailoring 'less'
