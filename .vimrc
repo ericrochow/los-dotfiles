@@ -42,9 +42,9 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold' " For SimpylFold
 
 " Code completion
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets' " for ultisnips
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets' " for ultisnips
 
 " Python syntax
 Plugin 'nvie/vim-flake8'
@@ -104,10 +104,10 @@ function! XTermPasteBegin()
 endfunction
 
 " Start UltiSnips Configuration
-let g:UltiSnipsExpandTrigger="<C-\\>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" let g:UltiSnipsExpandTrigger="<C-\\>"
+" let g:UltiSnipsJumpForwardTrigger="<C-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " End UltiSnips Configuration
 
 " Start Flake8 Configuration
@@ -130,8 +130,8 @@ let g:SimpylFold_fold_import = 1
 " End SimpylFold Configuration
 
 " Start YouCompleteMe Configuration
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " End YouCompleteMe Configuration
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
@@ -161,7 +161,7 @@ nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 " End GitGutter Configuration
 
 " Start ALE Configuration
-let g:ale_completion_enabled=1
+" let g:ale_completion_enabled=1
 " End ALE Configuration
 
 " Start Tagbar Configuration
@@ -268,6 +268,22 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " End fuzzyfinder Configuration
+
+" Begin kite configuration
+autocmd VimEnter *
+    \ execute ':KiteEnableAutoStart'
+autocmd CompleteDone * if !pumvisible() | pclose | endif
+let g:kite_auto_complete=1 " enable kite's completions automatically as the user types
+let g:kite_snippets=1 " enable kite's snippets
+let g:kite_tab_complete=1 " allow tab completion
+let g:kite_log=0 " disable kite debugging. change to 1 to enable
+set completeopt+=menuone " show the popup menu even when there is only one match
+set completeopt+=noinsert " don't insert any text until the user chooses a match
+set completeopt-=longest " don't insert the longest common text
+set completeopt+=preview " display documentation in the preview window for each completion option
+set belloff+=ctrlg " stop vim from beeping during completion
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P " add a kite indicator to the statusline
+" End kite configuration
 
 " Visual text block remaps
 vnoremap J :m ‘>+1gv=gv
