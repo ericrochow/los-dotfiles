@@ -393,3 +393,6 @@ export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+# added by travis gem
+[ -f /home/erochow/.travis/travis.sh ] && source /home/erochow/.travis/travis.sh
