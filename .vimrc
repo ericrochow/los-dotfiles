@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'zhou13/vim-easyescape'
 
@@ -38,8 +38,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Code folding
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'Konfekt/FastFold' " For SimpylFold
+" Plugin 'tmhedberg/SimpylFold'
+" Plugin 'Konfekt/FastFold' " For SimpylFold
 
 " Code completion
 " Plugin 'Valloric/YouCompleteMe'
@@ -64,6 +64,7 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'maksimr/vim-jsbeautify' " JSON and other JS
 Plugin 'Rykka/riv.vim' " rst
 Plugin 'lepture/vim-jinja' " jinja
+Plugin 'kovetskiy/sxhkd-vim' " sxhkd stuff
 
 " Sublime feature emulation
 Plugin 'tpope/vim-surround'
