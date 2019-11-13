@@ -23,7 +23,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Colors!
-Plugin 'jnurmine/Zenburn' " Zenburn color scheme
+" Plugin 'jnurmine/Zenburn' " Zenburn color scheme
 Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
 Plugin 'stephenmckinney/vim-solarized-powerline'
 Plugin 'flazz/vim-colorschemes'
@@ -76,10 +76,10 @@ filetype plugin indent on    " required
 
 filetype plugin indent on
 " Start color configuration
-syntax enable
-let g:solorized_termcolors=256
-set background=dark
-colorscheme solarized
+" syntax enable
+" let g:solorized_termcolors=256
+" set background=dark
+" colorscheme solarized
 " End color configuration
 
 function! WrapForTmux(s)
@@ -125,9 +125,9 @@ autocmd FileType python let g:syntastic_python_checkers = []
 " End Syntastic Configuration
 
 " Start SimpylFold Configuration
-let g:SimpylFold_docstring_preview = 1
-let g:SimpylFold_fold_docstring = 1
-let g:SimpylFold_fold_import = 1
+" let g:SimpylFold_docstring_preview = 1
+" let g:SimpylFold_fold_docstring = 1
+" let g:SimpylFold_fold_import = 1
 " End SimpylFold Configuration
 
 " Start YouCompleteMe Configuration
@@ -139,7 +139,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Start Black Configuration
 let g:black_fast=0
-let g:black_linelength=79
+let g:black_linelength=87
 let g:black_skip_string_normalization=0
 let g:black_virtualenv="~/.vim/black"
 " End Black Configuration
@@ -153,8 +153,8 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
 let g:gitgutter_override_sign_column_highlight = 1
-highlight SignColumn guibg=bg
-highlight SignColumn ctermbg=bg
+" highlight SignColumn guibg=bg
+" highlight SignColumn ctermbg=bg
 nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
 nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
 nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
