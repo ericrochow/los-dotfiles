@@ -116,16 +116,11 @@ ctrl + alt + Delete
 #########################
 
 Print
-    # xfce4-screenshooter -f -s ~/Pictures
-    /usr/bin/gnome-screenshot -i
+    maim -s | xclip -selection clipboard -t image/png && notify-send -t 300 "Screenshot copied to clipboard"
 
 shift + Print
-    # xfce4-screenshooter -r -s ~/Pictures
-    /usr/bin/gnome-screenshot -a -i
-
-ctrl  + Print
-    # xfce4-screenshooter -w -s ~/Pictures
-    /usr/bin/gnome-screenshot -w -i
+    /usr/bin/gnome-screenshot
+    maim -s ~/Pictures/$(date +%Y%m%dT%H%M).png && notify-send -t 300 "Screenshot saved"
 
 
 #########################
