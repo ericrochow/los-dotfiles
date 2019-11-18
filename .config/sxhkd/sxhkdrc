@@ -10,11 +10,6 @@ alt + f
 
 ctrl + space
     rofi -combi-modi window,drun,ssh,run -show combi -modi combi
-# rofi -show window
-
-#rofi run
-# ctrl + space
- 	  # rofi -show run
 
 #Rofi theme selector
 ctrl + alt + r
@@ -22,12 +17,6 @@ ctrl + alt + r
 
 super + d
     rofi -show run
-# super + d
-	  # redpaper -d
-# super + c
-	  # redpaper -c
-# super + shift + c
-	  # redpaper -bc
 
 super + m
     thunar
@@ -43,14 +32,11 @@ super + shift + x
 super + b
 	  $EDITOR ~/.config/bspwm/bspwmrc
 
-super + shift +b
+super + shift + b
 	  $EDITOR ~/.config/sxhkd/sxhkdrc
 
 super + w
 	  bspc node -g {sticky=on, sticky=off}
-
-super + e
-    caja
 
 #Toggle fullscreen of window
 super + f
@@ -59,6 +45,10 @@ super + f
 #Pavucontrol
 # super + v
     # pavucontrol
+
+# Toggle bluetooth profile
+super + shift + p
+    ~/.config/sxhkd/scripts/toggle_bluetooth_audio_profile.sh
 
 #Hide polybar
 super + y
@@ -82,7 +72,6 @@ super + z
 
 #DMENU
 super + shift + d
-	  # dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 	  dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Hack:bold:pixelsize=14'
 
 #Reload bspwm
@@ -128,15 +117,15 @@ ctrl + alt + Delete
 
 Print
     # xfce4-screenshooter -f -s ~/Pictures
-    gnome-screenshot -i
+    /usr/bin/gnome-screenshot -i
 
 shift + Print
     # xfce4-screenshooter -r -s ~/Pictures
-    gnome-screenshot -a -i
+    /usr/bin/gnome-screenshot -a -i
 
 ctrl  + Print
     # xfce4-screenshooter -w -s ~/Pictures
-    gnome-screenshot -w -i
+    /usr/bin/gnome-screenshot -w -i
 
 
 #########################
