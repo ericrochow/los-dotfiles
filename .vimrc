@@ -12,10 +12,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Navigation
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'majutsushi/tagbar'
-Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'tpope/vim-vinegar'
 Plugin 'zhou13/vim-easyescape'
 
 " Git
@@ -96,7 +95,32 @@ endfunction
 let &t_SI .= WrapForTmux("\<Esc>[?2004h")
 let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+set wildignore=tags,.log,.swp,.git,.jpg,.png,.svg,.gif,.mp3,.mp4,.pyc,__pycache__,.pytest_cache,.ropeproject/
+
+" Start netrw configuration
+let g:netrw_banner = 0 " disable help banner
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20 " percent of window width
+let g:netrw_list_hide = &wildignore
+
+" augroup ProjectDrawer
+  " autocmd!
+  " autocmd VimEnter * :Vexplore
+" augroup END
+autocmd VimEnter *
+    \ if argc() == 0 && !exists("s:std_in")
+        \ | Vexplore
+    \ | elseif argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+        \ | exe "Vexplore"
+    \ endif
+
+augroup netrw_close
+  autocmd!
+  autocmd WinEnter * if winnr("$") == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"|q|endif
+augroup END
+" End netrw configuration
 
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
@@ -320,19 +344,6 @@ au BufNewFile,BufNewFile */playbooks/*.yml, */ansible*/*.yml
 
 autocmd StdinReadPre *
     \ let s:std_in=1
-autocmd VimEnter *
-    \ if argc() == 0 && !exists("s:std_in")
-        \ | NERDTree
-    \ | elseif argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
-        \ | exe 'NERDTree' argv()[0]
-    \ | endif
-
-autocmd bufenter *
-    \ if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
-        \ | q
-    \ | elseif (winnr("$") == 1 && exists("b:loaded_flake8_ftplugin") && b:loaded_flake8_ftplugin == "primary")
-        \ | q
-    \ | endif
 
 autocmd BufWritePre *.py
     \ execute ':Black'
