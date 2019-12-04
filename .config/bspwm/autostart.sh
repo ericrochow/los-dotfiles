@@ -14,7 +14,7 @@ function run {
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
 $HOME/.config/polybar/launch.sh &
-indicator-kdeconnect &
+# indicator-kdeconnect &
 
 #change your keyboard if you need it
 #setxkbmap -layout be
@@ -34,13 +34,14 @@ run nm-applet &
 run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
+nextcloud --background
 compton --config $HOME/.config/bspwm/compton.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 #nitrogen --set-auto Pictures/blackpink.png
 # ulauncher &
-$HOME/.redpaper/wallpaper.sh &
-wal -i /home/ted/Pictures/Redpaper/Astronaut\ and\ the\ black\ hole\ fantasy\ space\ \[1920x1080\].jpeg -n &
+# $HOME/.redpaper/wallpaper.sh &
+# wal -i /home/erochow/Nextcloud/Wallpaper/Simple/void.png -n &
 #auto-xflux -k 1800
 
 #Git init
