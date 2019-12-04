@@ -324,11 +324,11 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ | set softtabstop=4
     \ | set shiftwidth=4
-    \ | set textwidth=79
+    \ | set textwidth=87
     \ | set expandtab
     \ | set autoindent
     \ | set fileformat=unix
-    \ | set colorcolumn=80
+    \ | set colorcolumn=88
     \ | set number
 
 au BufNewFile,BufRead *.js, *.html, *.css
