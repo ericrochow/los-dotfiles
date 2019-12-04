@@ -115,12 +115,13 @@ ctrl + alt + Delete
 #     SCREENSHOTS       #
 #########################
 
+# Take screenshot and copy to clipboard
 Print
     maim -s | xclip -selection clipboard -t image/png && notify-send -t 300 "Screenshot copied to clipboard"
 
+# Take screenshot and save to file
 shift + Print
-    /usr/bin/gnome-screenshot
-    maim -s ~/Pictures/$(date +%Y%m%dT%H%M).png && notify-send -t 300 "Screenshot saved"
+    maim -s ~/Pictures/$(date +%Y%m%dT%H%M%S).png && notify-send -t 300 "Screenshot saved"
 
 
 #########################
