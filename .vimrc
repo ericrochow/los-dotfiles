@@ -22,12 +22,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Colors!
-" Plugin 'jnurmine/Zenburn' " Zenburn color scheme
-Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
-Plugin 'stephenmckinney/vim-solarized-powerline'
+" Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
+" Plugin 'stephenmckinney/vim-solarized-powerline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'lilydjwg/colorizer'
 Plugin 'sheerun/vim-polyglot'
+" Plugin 'dylanaraps/wal.vim'
 
 " Search
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
