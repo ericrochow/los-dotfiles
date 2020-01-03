@@ -19,11 +19,6 @@ $HOME/.config/polybar/launch.sh &
 #change your keyboard if you need it
 #setxkbmap -layout be
 
-#Some ways to set your wallpaper besides variety or nitrogen
-# feh --bg-scale ~/.config/bspwm/wall.png &
-#feh --randomize --bg-fill ~/Képek/*
-#feh --randomize --bg-fill ~/Dropbox/Apps/Desktoppr/*
-
 xsetroot -cursor_name left_ptr &
 sxhkd &
 
@@ -35,13 +30,11 @@ run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
 nextcloud --background
+pkill compton
 compton --config $HOME/.config/bspwm/compton.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-#nitrogen --set-auto Pictures/blackpink.png
-# ulauncher &
-# $HOME/.redpaper/wallpaper.sh &
-# wal -i /home/erochow/Nextcloud/Wallpaper/Simple/void.png -n &
+# wal -R
 #auto-xflux -k 1800
 
 #Git init

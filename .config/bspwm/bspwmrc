@@ -7,13 +7,14 @@ $HOME/.config/bspwm/autostart.sh
 
 #BSPWM configuration
 bspc config border_radius        0
-bspc config border_width         1
+bspc config border_width         3
 bspc config window_gap           5
 bspc config top_padding          5
 bspc config bottom_padding       5
 bspc config left_padding         5
 bspc config right_padding        5
-bspc config single_monocle       false
+# bspc config single_monocle       false
+bspc config single_monocle       true
 bspc config click_to_focus       true
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -21,6 +22,7 @@ bspc config gapless_monocle      true
 bspc config focus_by_distance    true
 # bspc config focus_follows_pointer true
 bspc config focus_follows_pointer false
+bspc config pointer_follows_focus true
 bspc config history_aware_focus  true
 #bspc config pointer_motion_interval 5
 bspc config pointer_modifier mod1
@@ -32,24 +34,31 @@ bspc config remove_disabled_monitors true
 bspc config merge_overlapping_monitors false
 
 ##BSPWM coloring
-bspc config normal_border_color		"#521575"
-bspc config active_border_color		"#1e1e1e"
-bspc config active_border_color		"#e038c9"
-bspc config focused_border_color	"#e038c9"
+# bspc config normal_border_color		"#521575"
+# bspc config active_border_color		"#1e1e1e"
+# bspc config active_border_color		"#e038c9"
+# bspc config focused_border_color	"#e038c9"
 #bspc config presel_feedback_color	"#5e81ac"
 #bspc config urgent_border_color 	"#dd2727"
+bspc config normal_border_color		"$color1"
+bspc config active_border_color		"$color2"
+bspc config focused_border_color	"$color15"
+bspc config presel_feedback_color	"$color1"
+bspc config urgent_border_color 	"$color11"
 
 # source the colors.
-#. "${HOME}/.cache/wal/colors.sh"
+. "${HOME}/.cache/wal/colors.sh"
+
 
 # Set the border colors.
-#bspc config normal_border_color "$color1"
-#bspc config active_border_color "$color2"
-#bspc config focused_border_color "$color15"
+# bspc config normal_border_color "$color1"
+# bspc config active_border_color "$color2"
+# bspc config focused_border_color "$color15"
 # Use the line below if you are on bspwm >= 0.9.4
-#bspc config presel_feedback_color "$color1"
+# bspc config presel_feedback_color "$color1"
 # Use the line below if you are on bspwm < 0.9.4
 #bspc config presel_border_color "$color1"
+
 
 #Dual monitor
 #find out names with arandr or xrandr
@@ -81,17 +90,19 @@ bspc rule -a Gnome-disks state=tiled
 bspc rule -a Xfce4-settings-manager state=tiled
 
 #open applications on specific workspaces
-bspc rule -a firefox desktop='^1'
-bspc rule -a tauonmb='^9'
-bspc rule -a persepolis state=floating
+# bspc rule -a firefox desktop='^1'
+# bspc rule -a tauonmb='^9'
+# bspc rule -a persepolis state=floating
 bspc rule -a bluetooth state=floating
-bspc rule -a emacs state=tiled
-bspc rule -a VLC media player='^5'
+# bspc rule -a emacs state=tiled
+# bspc rule -a VLC media player='^5'
 
 #Spotify fix  --move desktop 10
 #sleep 1
 #wmctrl -r Spotify -t 10
 #exit
+
+bspc desktop "^1 --layout monocle"
 
 #polybar hidden when fullscreen for vlc, youtube, mpv ...
 #find out the name of your monitor with xrandr
