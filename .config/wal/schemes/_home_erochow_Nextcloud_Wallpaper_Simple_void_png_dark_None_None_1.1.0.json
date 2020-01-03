@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/erochow/Nextcloud/Wallpaper/Simple/void.png",
+    "alpha": "100",
+    "special": {
+        "background": "#05192C",
+        "foreground": "#77d4f3",
+        "cursor": "#77d4f3"
+    },
+    "colors": {
+        "color0": "#05192C",
+        "color1": "#96CB0A",
+        "color2": "#BBF801",
+        "color3": "#F0CF00",
+        "color4": "#C7FF00",
+        "color5": "#0487B3",
+        "color6": "#039CCF",
+        "color7": "#77d4f3",
+        "color8": "#5394aa",
+        "color9": "#96CB0A",
+        "color10": "#BBF801",
+        "color11": "#F0CF00",
+        "color12": "#C7FF00",
+        "color13": "#0487B3",
+        "color14": "#039CCF",
+        "color15": "#77d4f3"
+    }
+}

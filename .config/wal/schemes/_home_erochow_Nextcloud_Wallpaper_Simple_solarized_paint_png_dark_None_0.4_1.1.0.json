@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/erochow/Nextcloud/Wallpaper/Simple/solarized_paint.png",
+    "alpha": "100",
+    "special": {
+        "background": "#00252F",
+        "foreground": "#d7d7d7",
+        "cursor": "#d7d7d7"
+    },
+    "colors": {
+        "color0": "#00252F",
+        "color1": "#585f28",
+        "color2": "#567f36",
+        "color3": "#357b6f",
+        "color4": "#3b8b85",
+        "color5": "#4d91b3",
+        "color6": "#cdcd8b",
+        "color7": "#d7d7d7",
+        "color8": "#969696",
+        "color9": "#585f28",
+        "color10": "#567f36",
+        "color11": "#357b6f",
+        "color12": "#3b8b85",
+        "color13": "#4d91b3",
+        "color14": "#cdcd8b",
+        "color15": "#d7d7d7"
+    }
+}

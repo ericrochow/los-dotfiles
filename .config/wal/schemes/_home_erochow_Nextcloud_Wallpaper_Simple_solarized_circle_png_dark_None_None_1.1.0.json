@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/erochow/Nextcloud/Wallpaper/Simple/solarized_circle.png",
+    "alpha": "100",
+    "special": {
+        "background": "#002B36",
+        "foreground": "#d8dad3",
+        "cursor": "#d8dad3"
+    },
+    "colors": {
+        "color0": "#002B36",
+        "color1": "#9E9100",
+        "color2": "#647986",
+        "color3": "#6570C1",
+        "color4": "#D33682",
+        "color5": "#2C95B2",
+        "color6": "#8C9B9C",
+        "color7": "#d8dad3",
+        "color8": "#979893",
+        "color9": "#9E9100",
+        "color10": "#647986",
+        "color11": "#6570C1",
+        "color12": "#D33682",
+        "color13": "#2C95B2",
+        "color14": "#8C9B9C",
+        "color15": "#d8dad3"
+    }
+}
