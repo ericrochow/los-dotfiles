@@ -27,12 +27,12 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #292d3e
-foreground = #c0c5ce
-alert = #bd2c40
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
+; background = #292d3e
+; foreground = #c0c5ce
+; alert = #bd2c40
+; volume-min = #a3be8c
+; volume-med = #ebcb8b
+; volume-max = #bf616a
 ; =======================
 
 ; Gotham theme ==========
@@ -55,6 +55,24 @@ volume-max = #bf616a
 ;secondary = #e60053
 ;alert = #bd2c40
 
+; Wal theme ============
+; background = ${xrdb:color12:#222}
+background = ${xrdb:color0:#222}
+; foreground = ${xrdb:color7:#222}
+foreground = ${xrdb:color7:#222}
+; alert = ${xrdb:color11:#222}
+alert = ${xrdb:color11:#222}
+; primary = ${xrdb:color1:#222}
+primary = ${xrdb:color1:#222}
+; secondary = ${xrdb:color2:#222}
+secondary = ${xrdb:color2:#222}
+; volume-min = ${xrdb:color9:#222}
+volume-min = ${xrdb:color9:#222}
+; volume-med = ${xrdb:color10:#222}
+volume-med = ${xrdb:color10:#222}
+; volume-max = ${xrdb:color11:#222}
+volume-max = ${xrdb:color11:#222}
+; =======================
 
 ################################################################################
 ################################################################################
@@ -237,17 +255,17 @@ format-background = ${colors.background}
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #82AAFF
+content-foreground = ${xrdb:color4:#222}
 ;#C3E88D
-content-background = #292d3e
+content-background = ${xrdb:colors.background:#222}
 
 [module/arrow2]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-;content-foreground = #82AAFF
-content-background = #82AAFF
+;content-foreground = ${xrdb:color4:#222}
+content-background = ${xrdb:color12:#222}
 ;#C3E88D
 
 [module/arrow3]
@@ -255,24 +273,24 @@ content-background = #82AAFF
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #C792EA
-content-background = #82AAFF
+content-foreground = ${xrdb:color5:#222}
+content-background = ${xrdb:color4:#222}
 
 [module/arrow4]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #FFE585
-content-background = #C792EA
+content-foreground = ${xrdb:color3:#222}
+content-background = ${xrdb:color5:#222}
 
 [module/arrow5]
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #F07178
-content-background = #FFE585
+content-foreground = ${xrdb:color10:#222}
+content-background = ${xrdb:color3:#222}
 
 [module/arrow6]
 ; grey to Blue
@@ -281,7 +299,7 @@ content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = ${colors.background}
 ;content-foreground = #1D2330
-content-background = #F07178
+content-background = ${xrdb:color10:#222}
 
 
 
@@ -402,8 +420,8 @@ interval = 1
 ;   <ramp-load>
 ;   <ramp-coreload>
 # format = <label> <ramp-coreload>
-format-foreground = #292d3e
-format-background = #F07178
+format-foreground = ${xrdb:colors.background:#222}
+format-background = ${xrdb:color10:#222}
 format = <label>
 format-prefix = " "
 ; Available tokens:
@@ -724,9 +742,9 @@ label = %percentage_used%%
 
 format = Mem <label>
 format-prefix = " "
-format-prefix-foreground = #292d3e
-format-foreground = #292d3e
-format-background = #82AAFF
+format-prefix-foreground = ${xrdb:colors.background:#222}
+format-foreground = ${xrdb:colors.background:#222}
+format-background = ${xrdb:color4:#222}
 
 ################################################################################
 
@@ -806,12 +824,12 @@ format-foreground =
 format-background =
 
 format-connected = <label-connected>
-format-connected-background = #C792EA
+format-connected-background = ${xrdb:color5:#222}
 format-connected-foreground = ${colors.background}
 format-connected-padding = 1
 
 format-disconnected = <label-disconnected>
-format-disconnected-background = #C792EA
+format-disconnected-background = ${xrdb:color5:#222}
 format-disconnected-foreground = ${colors.background}
 format-disconnected-padding = 1
 
@@ -844,7 +862,7 @@ click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
 format-foreground = ${colors.background}
-format-background = #FFE585
+format-background = ${xrdb:color3:#222}
 
 
 
