@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/erochow/Nextcloud/Wallpaper/Simple/solarized_paint.png"
+let background = "#002B36"
+let foreground = "#93A1A1"
+let cursor     = "#268bd2"
+
+" Colors
+let color0  = "#002B36"
+let color1  = "#DC322F"
+let color2  = "#859900"
+let color3  = "#B58900"
+let color4  = "#268BD2"
+let color5  = "#6C71C4"
+let color6  = "#2AA198"
+let color7  = "#93A1A1"
+let color8  = "#af8700"
+let color9  = "#DC322F"
+let color10 = "#859900"
+let color11 = "#B58900"
+let color12 = "#268BD2"
+let color13 = "#6C71C4"
+let color14 = "#2AA198"
+let color15 = "#FDF6E3"

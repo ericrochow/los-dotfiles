@@ -1,0 +1,21 @@
+set $wallpaper /home/erochow/Nextcloud/Wallpaper/Simple/solarized_paint.png
+
+set $background #002B36
+set $foreground #93A1A1
+
+set $color0 #002B36
+set $color1 #DC322F
+set $color2 #859900
+set $color3 #B58900
+set $color4 #268BD2
+set $color5 #6C71C4
+set $color6 #2AA198
+set $color7 #93A1A1
+set $color8 #af8700
+set $color9 #DC322F
+set $color10 #859900
+set $color11 #B58900
+set $color12 #268BD2
+set $color13 #6C71C4
+set $color14 #2AA198
+set $color15 #FDF6E3
