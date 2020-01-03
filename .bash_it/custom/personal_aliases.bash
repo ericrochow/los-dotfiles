@@ -90,7 +90,7 @@ alias tmuxlab='tmux attach-session -d -t lab || tmux new-session -s lab'
 alias whoisas='whois -h whois.cymru.com -v'
 alias forecast='curl -so /tmp/weather http://wttr.in ; cat /tmp/weather | egrep -e "City:|Feature:|@igor" -v'
 alias chromium-browser='/usr/lib/chromium-browser/chromium-browser --enable-plugins %U'
-alias updates='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo aideinit -f -y -b'
+alias updates='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
 alias bogons='whois -h whois.radb.net fltr-bogons'
 
 #-------------------------------------------------------------
