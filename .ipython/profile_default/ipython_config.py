@@ -189,18 +189,7 @@
 
 # The part of the banner to be printed before the profile
 # c.InteractiveShell.banner1 = 'Python 2.7.15rc1 (default, Nov 12 2018, 14:31:15) \nType "copyright", "credits" or "license" for more information.\n\nIPython 5.7.0 -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
-c.InteractiveShell.banner1 = """ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____
-/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___/ ___|
-\\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\___ \\
- ___) |__) |__) |__) |__) |__) |__) |__) |__) |__) |__) |__) |__) |__) |
-|____/____/____/____/____/____/____/____/____/____/____/____/____/____/
-
- __  __  ___ _____ _   _ _____ ____  _____ _   _  ____ _  _______ ____
-|  \\/  |/ _ \\_   _| | | | ____|  _ \\|  ___| | | |/ ___| |/ / ____|  _ \\
-| |\\/| | | | || | | |_| |  _| | |_) | |_  | | | | |   | ' /|  _| | |_) |
-| |  | | |_| || | |  _  | |___|  _ <|  _| | |_| | |___| . \\| |___|  _ <
-|_|  |_|\\___/ |_| |_| |_|_____|_| \\_\\_|    \\___/ \\____|_|\\_\\_____|_| \\_\\
-"""
+c.InteractiveShell.banner1 = ""
 
 # The part of the banner to be printed after the profile
 # c.InteractiveShell.banner2 = ''
