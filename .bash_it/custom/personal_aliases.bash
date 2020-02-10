@@ -102,7 +102,7 @@ case $(hostname) in
     alias orwell-rsync='rsync -avz -e "ssh -p 29070 -i /home/erochow/.ssh/host.beardofprey.net.key.pub"'
     alias ine-rsync='rsync -avzru -e "ssh -p 29070 -i /home/erochow/.ssh/host.beardofprey.net.key.pub" ~/Videos/ erochow@www.ericrochow.net:/media/Media/Video/Puters/'
     alias sdnify='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/sdnify.py'
-    alias unicorndust='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/unicorndust.py'
+    alias unicorndust='/home/erochow/Scripts/unicorndust/env/bin/python /home/erochow/Scripts/unicorndust/unicorndust.py'
     alias clippypost='/home/erochow/Scripts/sdnify/env/bin/python /home/erochow/Scripts/sdnify/clippypost.py'
     alias nocpasswd='ssh oldnoc "sudo cat /home/passwords/newpasswords8-now_in_use_now"'
     alias nocpasswd7='ssh oldnoc "sudo cat /home/passwords/oldpasswords7"'
@@ -120,6 +120,7 @@ case $(hostname) in
     alias eqx2='ssh lw-eqx-border2.rtr'
     alias ash1='ssh lw-ash-border1.rtr'
     alias ash2='ssh lw-ash-border2.rtr'
+    alias spotui='/opt/spotify/env/bin/spotui'
     ;;
   "lilshawty")
     ;;

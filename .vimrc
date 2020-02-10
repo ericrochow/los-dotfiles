@@ -349,7 +349,7 @@ autocmd BufWritePre *.py
     \ execute ':Black'
 
 autocmd BufWritePre *.json
-    \ execute ':call JsonBeuatify()'
+    \ execute ':call JsBeautify()'
 
 autocmd FileType javascript
     \ noremap <buffer>  <C-f> :call JsBeautify()<cr>

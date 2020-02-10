@@ -34,7 +34,7 @@ pkill compton
 compton --config $HOME/.config/bspwm/compton.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-# wal -R
+wal -R
 #auto-xflux -k 1800
 
 #Git init

@@ -90,6 +90,9 @@ super + shift + q
 super + shift + x
 	  bspc quit
 
+# Monocle switching
+super + {_,shift +} c
+    bspc node -f {next,prev}
 
 #########################
 # CONTROL + ALT KEYS    #
