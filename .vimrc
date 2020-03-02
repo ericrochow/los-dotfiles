@@ -69,6 +69,8 @@ Plugin 'kovetskiy/sxhkd-vim' " sxhkd stuff
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
 
+Plugin 'jpalardy/vim-slime'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -214,6 +216,13 @@ let g:easyescape_timeout = 100
 cnoremap jk <ESC>
 cnoremap kj <ESC>
 " End Easyescape Configuration
+
+" Start vim-slime Configuration
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_python_ipython = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
+" End vim-slime Configuration
 
 " Start fuzzyfinder Configuration
 " This is the default extra key bindings
