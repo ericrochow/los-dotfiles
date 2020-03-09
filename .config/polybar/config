@@ -1,3 +1,7 @@
+# Try to create a "menu" using conky:
+# https://github.com/urielzo/animated-polybar/blob/master/.config/polybar/config
+# https://i.redd.it/1swprgksi0l41.png
+
 [global/wm]
 ;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
 margin-top = 0
