@@ -64,7 +64,8 @@ super + Escape
 
 #Terminal emulator
 super + z
-    /usr/bin/tilix
+    # /usr/bin/tilix
+    /usr/bin/kitty
 
 #########################
 # SUPER + SHIFT KEYS    #
@@ -94,6 +95,9 @@ super + shift + x
 super + {_,shift +} c
     bspc node -f {next,prev}
 
+super + shift + h
+    dm-tool lock && systemctl hibernate
+
 #########################
 # CONTROL + ALT KEYS    #
 #########################
@@ -110,7 +114,8 @@ ctrl + alt + o
 
 
 ctrl + alt + Delete
-    poweroff
+    reboot
+    # poweroff
 
 
 
@@ -166,11 +171,13 @@ XF86AudioStop
 
 #Brightness up
 XF86MonBrightnessUp
-    light -A 2
+  # light -A 2
+    xbacklight -inc 10
 
 #Brightness down
 XF86MonBrightnessDown
-    light -U 2
+  # light -U 2
+    xbacklight -dec 10
 
 
 #########################

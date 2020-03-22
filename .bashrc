@@ -330,23 +330,25 @@ complete -f -o default -X '!*.pl'  perl perl5
 
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
+unset BASH_IT_LEGACY_PASS
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
 # location /.bash_it/themes/
-export BASH_IT_THEME='powerline-multiline'
+export BASH_IT_THEME='barbuk'
+# export BASH_IT_THEME='powerline-multiline'
 
 # Powerline prompt
 # export POWERLINE_PROMPT_USER_INFO_MODE="sudo"
-export POWERLINE_LEFT_PROMPT="scm hostname python_venv cwd"
-export POWERLINE_RIGHT_PROMPT="in_vim clock user_info"
+# export POWERLINE_LEFT_PROMPT="scm hostname python_venv cwd"
+# export POWERLINE_RIGHT_PROMPT="in_vim clock user_info"
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
 # export BASH_IT_REMOTE='bash-it'
 
 # Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@git.noc.liquidweb.com'
+# export GIT_HOSTING='git@git.noc.liquidweb.com'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
@@ -355,16 +357,16 @@ unset MAILCHECK
 #export IRC_CLIENT='irssi'
 
 # Set this to the command you use for todo.txt-cli
-export TODO="todo-txt"
+# export TODO="todo-txt"
 
 # Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
+# export SCM_CHECK=true
 
 # Set this to tru to show the working copy details in your prompt
-export SCM_GIT_SHOW_DETAILS=true
+# export SCM_GIT_SHOW_DETAILS=true
 
 # Set to 'auto' (the default value) to activate it only when more than one remote is configured in the current repo
-export SCM_GIT_SHOW_REMOTE_INFO=auto
+# export SCM_GIT_SHOW_REMOTE_INFO=auto
 
 # Set Xterm/screen/Tmux title with only a short hostname.
 # Uncomment this (or set SHORT_HOSTNAME to something else),
@@ -386,13 +388,13 @@ export SCM_GIT_SHOW_REMOTE_INFO=auto
 
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.
-export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
+# export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
 # Load Bash It
-source "$BASH_IT"/bash_it.sh
+# source "$BASH_IT"/bash_it.sh
 
 # added by travis gem
-[ -f /home/erochow/.travis/travis.sh ] && source /home/erochow/.travis/travis.sh
+# [ -f /home/erochow/.travis/travis.sh ] && source /home/erochow/.travis/travis.sh

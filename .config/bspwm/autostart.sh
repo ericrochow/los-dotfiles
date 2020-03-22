@@ -13,7 +13,6 @@ function run {
 #xrandr --output LVDS1 --mode 1366x768 --output DP3 --mode 1920x1080 --right-of LVDS1
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
-$HOME/.config/polybar/launch.sh &
 # indicator-kdeconnect &
 
 #change your keyboard if you need it
@@ -36,6 +35,7 @@ compton --config $HOME/.config/bspwm/compton.conf &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 wal -R
 #auto-xflux -k 1800
+$HOME/.config/polybar/launch.sh &
 
 #Git init
 eval "$(ssh-agent -s)"

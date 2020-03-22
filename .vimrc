@@ -8,6 +8,12 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""" Package Management """"""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -22,8 +28,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Colors!
-" Plugin 'altercation/vim-colors-solarized' " Solarized color scheme
-" Plugin 'stephenmckinney/vim-solarized-powerline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'lilydjwg/colorizer'
 Plugin 'sheerun/vim-polyglot'
@@ -33,8 +37,13 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 
-" Make Powerline work
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Aesthetics
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/promptline.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'jmcantrell/vim-virtualenv'
+" Plugin 'bling/vim-bufferline'
 
 " Code folding
 " Plugin 'tmhedberg/SimpylFold'
@@ -49,7 +58,6 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'nvie/vim-flake8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'psf/black'
-" Plugin 'w0rp/ale'
 
 " Ansible syntax
 Plugin 'pearofducks/ansible-vim'
@@ -69,13 +77,18 @@ Plugin 'kovetskiy/sxhkd-vim' " sxhkd stuff
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'jpalardy/vim-slime'
+Plugin 'jpalardy/vim-slime' " REPL
+Plugin 'mhinz/vim-startify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-filetype plugin indent on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""" Color Configuration """""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 " Start color configuration
 " syntax enable
 " let g:solorized_termcolors=256
@@ -83,59 +96,45 @@ filetype plugin indent on
 " colorscheme solarized
 " End color configuration
 
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
+set t_Co=256
 
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
 
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""" Navigation """""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
-set wildignore=tags,.log,.swp,.git,.jpg,.png,.svg,.gif,.mp3,.mp4,.pyc,__pycache__,.pytest_cache,.ropeproject/
+"""""""""""""""""" Use Built-in netrw interface """"""""""""""""""""
 
 " Start netrw configuration
-let g:netrw_banner = 0 " disable help banner
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 20 " percent of window width
-let g:netrw_list_hide = &wildignore
+" let g:netrw_banner = 0 " disable help banner
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 20 " percent of window width
+" let g:netrw_list_hide = &wildignore
 
 " augroup ProjectDrawer
   " autocmd!
   " autocmd VimEnter * :Vexplore
 " augroup END
-autocmd VimEnter *
-    \ if argc() == 0 && !exists("s:std_in")
-        \ | Vexplore
-    \ | elseif argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
-        \ | exe "Vexplore"
-    \ endif
+" autocmd VimEnter *
+    " \ if argc() == 0 && !exists("s:std_in")
+        " \ | Vexplore
+    " \ | elseif argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+        " \ | exe "Vexplore"
+    " \ endif
 
-augroup netrw_close
-  autocmd!
-  autocmd WinEnter * if winnr("$") == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"|q|endif
-augroup END
+" augroup netrw_close
+  " autocmd!
+  " autocmd WinEnter * if winnr("$") == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"|q|endif
+" augroup END
 " End netrw configuration
 
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
 
-" Start UltiSnips Configuration
-" let g:UltiSnipsExpandTrigger="<C-\\>"
-" let g:UltiSnipsJumpForwardTrigger="<C-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-" End UltiSnips Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""" Code Validation """""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Start Flake8 Configuration
 let g:flake8_show_quickfix=1
@@ -150,25 +149,20 @@ autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 autocmd FileType python let g:syntastic_python_checkers = []
 " End Syntastic Configuration
 
-" Start SimpylFold Configuration
-" let g:SimpylFold_docstring_preview = 1
-" let g:SimpylFold_fold_docstring = 1
-" let g:SimpylFold_fold_import = 1
-" End SimpylFold Configuration
-
-" Start YouCompleteMe Configuration
-" let g:ycm_autoclose_preview_window_after_completion=1
-" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" End YouCompleteMe Configuration
-
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
 " Start Black Configuration
 let g:black_fast=0
 let g:black_linelength=87
 let g:black_skip_string_normalization=0
 let g:black_virtualenv="~/.vim/black"
+
 " End Black Configuration
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""" Visuals """"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""" Git """"""""""""""""""""""""""""""""""
 
 " Start GitGutter Configuration
 nmap <C-g> :GitGutterToggle<CR>
@@ -187,18 +181,28 @@ nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
 nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 " End GitGutter Configuration
 
-" Start ALE Configuration
-" let g:ale_completion_enabled=1
-" End ALE Configuration
+
+"""""""""""""""""""""""""""" Tags """""""""""""""""""""""""""""""""""
+
+
+" set wildignore=tags,.log,.swp,.git,.jpg,.png,.svg,.gif,.mp3,.mp4,.pyc,__pycache__,.pytest_cache,.ropeproject/
 
 " Start Tagbar Configuration
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 " End Tagbar Configuration
 
-" Start powerline Configuration
-let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized256_dark'
-" End powerline Configuration
+"""""""""""""""""""""""""" Status Bar """"""""""""""""""""""""""""""
+
+
+" Start airline Configuration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='deus'
+" End airline Configuration
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""" Languange Syntax Customization """""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Start ansible-vim Configuration
 let g:ansible_unindent_after_newline = 1
@@ -210,21 +214,51 @@ let g:ansible_extra_keywords_highlight = 1
 let g:ansible_template_syntaxes = { '*.yml.j2': 'yaml' }
 " End ansible-vim Configuration
 
-" Start Easyescape Configuration
-let g:easyescape_chars = { "j": 1, "k": 1 }
-let g:easyescape_timeout = 100
-cnoremap jk <ESC>
-cnoremap kj <ESC>
-" End Easyescape Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""" External Visuals """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Start vim-slime Configuration
+" Begin promptline configuration
+" https://github.com/edkolev/promptline.vim
+let g:promptline_theme ='airline'
+" other themes available in autoload/promptline/themes/*
+let g:promptline_preset = 'clear'
+" other presets available in autoload/promptline/presets/*
+" End promptline configuration
+
+" Begin tmuxline configuration
+" https://github.com/edkolev/tmuxline.vim
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_preset = 'powerline'
+let g:tmuxline_theme = 'iceberg'
+" End tmuxline configuration
+
+" Begin virtulenv configuration
+" https://github.com/jmcantrell/vim-virtualenv
+" End virtualenv configuration
+
+" Begin bufferline configuratino
+" https://github.com/bling/vim-bufferline
+" End bufferline configuration
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""" IDE Emulation """""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""" REPL """"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""" Slime """"""""""""""""""""""""""""""""
+
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_python_ipython = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
-" End vim-slime Configuration
 
-" Start fuzzyfinder Configuration
+""""""""""""""""""""""""" Fuzzy Finder """""""""""""""""""""""""""""
+
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -301,9 +335,8 @@ command! -bang -nargs=* Rg
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" End fuzzyfinder Configuration
+""""""""""""""""""""" Kite (Code Completion) """""""""""""""""""""""
 
-" Begin kite configuration
 autocmd VimEnter *
     \ execute ':KiteEnableAutoStart'
 autocmd CompleteDone * if !pumvisible() | pclose | endif
@@ -317,17 +350,41 @@ set completeopt-=longest " don't insert the longest common text
 set completeopt+=preview " display documentation in the preview window for each completion option
 set belloff+=ctrlg " stop vim from beeping during completion
 set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P " add a kite indicator to the statusline
-" End kite configuration
 
-" Visual text block remaps
+""""""""""""""""""""" Visual Text Block Remaps """""""""""""""""""""
+
 vnoremap J :m ‘>+1gv=gv
 vnoremap K :m ‘<-2gv=gv
-" End visual text block remaps
 
-set rtp+=/usr/share/powerline/bindings/vim/
-set laststatus=2
-set t_Co=256
-set encoding=utf-8
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""" Auto Commands """"""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""" Auto Paste Mode """"""""""""""""""""""""""
+
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+"""""""""""""""""""""""" Python Settings """""""""""""""""""""""""""
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4
@@ -340,6 +397,11 @@ au BufNewFile,BufRead *.py
     \ | set colorcolumn=88
     \ | set number
 
+autocmd BufWritePre *.py
+    \ execute ':Black'
+
+"""""""""""""""""""""" Web Design Settings """""""""""""""""""""""""
+
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ | set softtabstop=2
@@ -348,26 +410,37 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ | set fileformat=unix
     \ | set number
 
-au BufNewFile,BufNewFile */playbooks/*.yml, */ansible*/*.yml
-   \ set filetype=yaml.ansible
-
-autocmd StdinReadPre *
-    \ let s:std_in=1
-
-autocmd BufWritePre *.py
-    \ execute ':Black'
-
-autocmd BufWritePre *.json
-    \ execute ':call JsBeautify()'
-
 autocmd FileType javascript
     \ noremap <buffer>  <C-f> :call JsBeautify()<cr>
-
-autocmd FileType json
-    \ noremap <buffer> <C-f> :call JsonBeautify()<cr>
 
 autocmd FileType html
     \ noremap <buffer> <C-f> :call HtmlBeautify()<cr>
 
 autocmd FileType css
     \ noremap <buffer> <C-f> :call CSSBeautify()<cr>
+
+
+"""""""""""""""""""""""" Ansible Settings """"""""""""""""""""""""""
+
+au BufNewFile,BufNewFile */playbooks/*.yml, */ansible*/*.yml
+   \ set filetype=yaml.ansible
+
+""""""""""""""""""""""""""""" JSON """""""""""""""""""""""""""""""""
+
+autocmd BufWritePre *.json
+    \ execute ':call JsBeautify()'
+
+autocmd FileType json
+    \ noremap <buffer> <C-f> :call JsonBeautify()<cr>
+
+""""""""""""""""""""""""""""" Misc """""""""""""""""""""""""""""""""
+
+autocmd StdinReadPre *
+    \ let s:std_in=1
+
+
+"""""""""""""""""""""""""" Unclassified  """""""""""""""""""""""""""
+
+set laststatus=2
+set encoding=utf-8
+
