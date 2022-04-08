@@ -58,7 +58,8 @@
     separator_color = frame     # Color for separator: auto/foreground/frame/X color
     icon_position = left        # Align icons left/right/off
 
-    idle_threshold = 120        # Don't remove messages if the user is idle (no mouse or keyboard input) for longer than idle_threshold seconds
+    # idle_threshold = 120        # Don't remove messages if the user is idle (no mouse or keyboard input) for longer than idle_threshold seconds
+    idle_threshold = 0        # Always remove messages
     sticky_history = yes        # Make notifications remain until clicked on (yes) or timeout as normal (no) when recalled from history
     history_length = 20         # Maximum amount of notifications kept in history
 
@@ -77,7 +78,7 @@
     # Close all notifications
     close_all = ctrl+shift+space
 
-    # Recall last message(s) 
+    # Recall last message(s)
     history = mod1+grave
 
     # Context menu

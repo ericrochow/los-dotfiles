@@ -1,8 +1,10 @@
 [user]
 	name = Eric Rochow
-	email = erochow@liquidweb.com
+	email = ericrochow@gmail.com
 [core]
   editor = vim
   excludesfile = '~/.gitignore'
 [push]
 	default = matching
+[init]
+	defaultBranch = main

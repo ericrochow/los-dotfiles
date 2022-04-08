@@ -30,8 +30,7 @@ format-margin =
 format-offset =
 
 [colors]
-; Wal theme ============
-; background = ${xrdb:color12:#222}
+; =======================
 background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
 alert = ${xrdb:color11:#222}
@@ -40,13 +39,6 @@ secondary = ${xrdb:color2:#222}
 volume-min = ${xrdb:color9:#222}
 volume-med = ${xrdb:color10:#222}
 volume-max = ${xrdb:color11:#222}
-; foreground = ${xrdb:color7:#222}
-; alert = ${xrdb:color11:#222}
-; primary = ${xrdb:color1:#222}
-; secondary = ${xrdb:color2:#222}
-; volume-min = ${xrdb:color9:#222}
-; volume-med = ${xrdb:color10:#222}
-; volume-max = ${xrdb:color11:#222}
 ; =======================
 
 ################################################################################
@@ -94,18 +86,14 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Hack:size=11;2"
-# font-0 = "Outrun future:size=8;2"
-font-1 = "Hack:size=16;3"
-# font-1 = "Outrun future:size=10;3"
+font-0 = "Hack:size=10;2"
+font-1 = "Hack:size=14;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 font-5 = "Noto Sans Symbols2:pixelsize=10;1"
-# modules-left = bspwm xwindow
-modules-left = powermenu xwindow
-;modules-center =
-modules-right = player-mpris-tail arrow1 memory2 cpu arrow3 wlan eth vpn arrow4 pavolume arrow5 xbacklight battery arrow6 date
+modules-left = powermenu player-mpris-tail
+modules-right = arrow1 memory2 cpu arrow3 wlan eth vpn arrow4 pipewire arrow5 xbacklight battery arrow6 date
 
 dpi-x = 192
 dpi-y = 192
@@ -542,37 +530,39 @@ label_maxlen = 25
 [module/powermenu]
 type = custom/menu
 
-label-open = ï€‘
+label-open = 
 expand-right = true
 
-label-open-padding = 4
-label-close-padding = 3
-format-spacing = 3
+label-open-padding = 2
+label-close-padding = 1
+format-spacing = 1
 label-open-foreground = ${colors.secondary}
-label-close = î¥ cancel
+label-open-background = ${colors.background}
+label-close =  Cancel
 label-close-foreground = ${colors.secondary}
+label-close-background = ${colors.background}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0-padding = 3
-menu-0-1-padding = 3
-menu-1-1-padding = 3
-menu-2-0-padding = 3
-menu-2-1-padding = 3
+menu-0-0-padding = 1
+menu-0-1-padding = 1
+menu-1-1-padding = 1
+menu-2-0-padding = 1
+menu-2-1-padding = 1
 
-menu-0-0 = reboot
+menu-0-0 =  Reboot
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+menu-0-1 =  Power off
 menu-0-1-exec = menu-open-2
 
-menu-1-0 = cancel
+menu-1-0 =  Cancel
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
+menu-1-1 =  Reboot
 menu-1-1-exec = sudo reboot
 
-menu-2-0 = power off
+menu-2-0 =  Power off
 menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
+menu-2-1 =  Cancel
 menu-2-1-exec = menu-open-0
 
 
@@ -700,6 +690,18 @@ scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
 format-foreground = ${colors.background}
 format-background = ${xrdb:color3:#222}
 
+[module/pipewire]
+type = custom/script
+label = "%output%"
+; label-font = 2
+interval = 2.0
+exec = ~/.config/polybar/scripts/pipewire.sh
+click-right = exec pavucontrol &
+click-left = ~/.config/polybar/pipewire.sh mute &
+scroll-up = ~/.config/polybar/pipewire.sh up &
+scroll-down = ~/.config/polybar/pipewire.sh down &
+format-foreground = ${colors.background}
+format-background = ${xrdb:color3:#222}
 
 
 ################################################################################

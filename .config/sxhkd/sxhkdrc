@@ -64,8 +64,7 @@ super + Escape
 
 #Terminal emulator
 super + z
-    # /usr/bin/tilix
-    /usr/bin/kitty
+    kitty
 
 #########################
 # SUPER + SHIFT KEYS    #
@@ -95,9 +94,6 @@ super + shift + x
 super + {_,shift +} c
     bspc node -f {next,prev}
 
-super + shift + h
-    dm-tool lock && systemctl hibernate
-
 #########################
 # CONTROL + ALT KEYS    #
 #########################
@@ -107,16 +103,16 @@ super + shift + h
 ctrl + alt + f
     firefox
 
-
 #Compton Toggle
 ctrl + alt + o
     ~/.config/bspwm/scripts/compton-toggle.sh
-
 
 ctrl + alt + Delete
     reboot
     # poweroff
 
+ctrl + alt + shift + h
+    dm-tool lock && systemctl hibernate
 
 
 #########################
