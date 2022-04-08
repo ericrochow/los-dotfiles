@@ -209,6 +209,7 @@ c.InteractiveShell.banner1 = ""
 
 # Set the color scheme (NoColor, Neutral, Linux, or LightBG).
 # c.InteractiveShell.colors = 'Neutral'
+c.InteractiveShell.colors = 'Linux'
 
 #
 # c.InteractiveShell.debug = False
@@ -333,6 +334,7 @@ c.InteractiveShell.banner1 = ""
 # The name or class of a Pygments style to use for syntax highlighting. To see
 # available styles, run `pygmentize -L styles`.
 # c.TerminalInteractiveShell.highlighting_style = 'legacy'
+c.TerminalInteractiveShell.highlighting_style = 'monokai'
 
 # Override highlighting format for specific tokens
 # c.TerminalInteractiveShell.highlighting_style_overrides = {}
@@ -627,13 +629,3 @@ c.InteractiveShell.banner1 = ""
 # If True, any %store-d variables will be automatically restored when IPython
 # starts.
 # c.StoreMagics.autorestore = False
-
-# Fail silently if powerline not installed (e.g. in a venv)
-try:
-    from powerline.bindings.ipython.since_5 import PowerlinePrompts
-
-    c = get_config()
-    c.TerminalInteractiveShell.simple_prompt = False
-    c.TerminalInteractiveShell.prompts_class = PowerlinePrompts
-except ImportError:
-    pass

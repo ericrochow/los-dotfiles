@@ -74,14 +74,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle :omz:plugins:keychain agents gpg
 zstyle :omz:plugins:keychain options --quiet
 zstyle :omz:plugins:ssh-agent agent-forwarding on # enable agent forwarding
-zstyle :omz:plugins:ssh-agent lifetime 4h # require reauth after 4 hours
+# zstyle :omz:plugins:ssh-agent lifetime 4h # require reauth after 4 hours
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(alias-finder ansible archlinux autojump battery colored-man-pages docker docker-compose extract fzf git gpg-agent keychain pass pip pipenv python ssh-agent systemd tmux)
+plugins=(alias-finder ansible archlinux battery colored-man-pages docker docker-compose extract fzf git gpg-agent keychain kubectl pass pip pipenv pyenv python ssh-agent systemd sudo thefuck tmux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# KiTTY stuff
+autoload -Uz compinit
+compinit
+kitty + complete setup zsh | source /dev/stdin

@@ -31,7 +31,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'lilydjwg/colorizer'
 Plugin 'sheerun/vim-polyglot'
-" Plugin 'dylanaraps/wal.vim'
+" Plugin 'arcticicestudio/nord-vim'
+Plugin 'joshdick/onedark.vim'
 
 " Search
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -77,12 +78,13 @@ Plugin 'kovetskiy/sxhkd-vim' " sxhkd stuff
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'jpalardy/vim-slime' " REPL
 Plugin 'mhinz/vim-startify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Plug 'psf/black', { 'tag': '*' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""" Color Configuration """""""""""""""""""""""""
@@ -90,10 +92,8 @@ filetype plugin indent on    " required
 
 
 " Start color configuration
-" syntax enable
+syntax enable
 " let g:solorized_termcolors=256
-" set background=dark
-" colorscheme solarized
 " End color configuration
 
 set t_Co=256
